@@ -1,0 +1,482 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4476F402-F431-49D7-937C-61A5A9E04B33}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>nmedia2</RootNamespace>
+    <AssemblyName>nmedia2</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44390</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CaptchaMvc, Version=2.5.0.0, Culture=neutral, PublicKeyToken=fe46ad421dd3b0e6, processorArchitecture=MSIL">
+      <HintPath>..\packages\CaptchaMvc.Mvc5.1.5.0\lib\net45-full\CaptchaMvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.KeyVault, Version=3.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.KeyVault.3.0.5\lib\net461\Microsoft.Azure.KeyVault.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.KeyVault.WebKey, Version=3.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.KeyVault.WebKey.3.0.5\lib\net461\Microsoft.Azure.KeyVault.WebKey.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Rest.ClientRuntime, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Rest.ClientRuntime.2.3.20\lib\net461\Microsoft.Rest.ClientRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Rest.ClientRuntime.Azure, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Rest.ClientRuntime.Azure.3.3.18\lib\net452\Microsoft.Rest.ClientRuntime.Azure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\css\all.min.css" />
+    <Content Include="assets\css\animate.css" />
+    <Content Include="assets\css\animate.min.css" />
+    <Content Include="assets\css\animated-text.css" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\flaticon.css" />
+    <Content Include="assets\css\meanmenu.min.css" />
+    <Content Include="assets\css\nivo-slider.css" />
+    <Content Include="assets\css\owl.carousel.min.css" />
+    <Content Include="assets\css\owl.transitions.css" />
+    <Content Include="assets\css\responsive.css" />
+    <Content Include="assets\css\scrollCue.css" />
+    <Content Include="assets\css\theme-default.css" />
+    <Content Include="assets\css\widget.css" />
+    <Content Include="assets\fonts\fa-brands-400.svg" />
+    <Content Include="assets\fonts\fa-regular-400.svg" />
+    <Content Include="assets\fonts\fa-solid-900.svg" />
+    <Content Include="assets\fonts\Flaticon.svg" />
+    <Content Include="assets\fonts\fontawesome-webfont3e6e.svg" />
+    <Content Include="assets\fonts\line-awesomeeb4f.svg" />
+    <Content Include="assets\fonts\themify9f24.svg" />
+    <Content Include="assets\images\1721129924085.JPEG" />
+    <Content Include="assets\images\ab1.png" />
+    <Content Include="assets\images\ab2.png" />
+    <Content Include="assets\images\abiut4.png" />
+    <Content Include="assets\images\abo1.png" />
+    <Content Include="assets\images\about1.png" />
+    <Content Include="assets\images\about2.png" />
+    <Content Include="assets\images\about3.png" />
+    <Content Include="assets\images\about5.png" />
+    <Content Include="assets\images\agro_logo1.png" />
+    <Content Include="assets\images\AI-IN-eDUCATION.jpg" />
+    <Content Include="assets\images\alphalogo1.png" />
+    <Content Include="assets\images\Android-Logo-300x169.jpg" />
+    <Content Include="assets\images\ap.jpg" />
+    <Content Include="assets\images\asp.jpeg" />
+    <Content Include="assets\images\avp_logo1.png" />
+    <Content Include="assets\images\ban.png" />
+    <Content Include="assets\images\Baner-1.png" />
+    <Content Include="assets\images\Baner-2.png" />
+    <Content Include="assets\images\Baner-3.jpg" />
+    <Content Include="assets\images\banner-shape.svg" />
+    <Content Include="assets\images\Basant.jpg" />
+    <Content Include="assets\images\Best-school.png" />
+    <Content Include="assets\images\bg.jpg" />
+    <Content Include="assets\images\bharat.jpg" />
+    <Content Include="assets\images\bl1.jpg" />
+    <Content Include="assets\images\bl2.jpg" />
+    <Content Include="assets\images\bl3.jpg" />
+    <Content Include="assets\images\bl4.jpg" />
+    <Content Include="assets\images\bl5.jpg" />
+    <Content Include="assets\images\blog1.jpg" />
+    <Content Include="assets\images\blog11.jpg" />
+    <Content Include="assets\images\blog2.jpg" />
+    <Content Include="assets\images\blog3.jpg" />
+    <Content Include="assets\images\blog4.jpg" />
+    <Content Include="assets\images\blog5.jpg" />
+    <Content Include="assets\images\brand1.png" />
+    <Content Include="assets\images\brand2.png" />
+    <Content Include="assets\images\brand3.png" />
+    <Content Include="assets\images\brand4.png" />
+    <Content Include="assets\images\call1.jpg" />
+    <Content Include="assets\images\case1.jpg" />
+    <Content Include="assets\images\case2.jpg" />
+    <Content Include="assets\images\case3.jpg" />
+    <Content Include="assets\images\case4.jpg" />
+    <Content Include="assets\images\cll.jpg" />
+    <Content Include="assets\images\cm.jpg" />
+    <Content Include="assets\images\contact.jpg" />
+    <Content Include="assets\images\counter1.jpg" />
+    <Content Include="assets\images\counter2.jpg" />
+    <Content Include="assets\images\counter3.jpg" />
+    <Content Include="assets\images\cover1.jpg" />
+    <Content Include="assets\images\cover2.jpg" />
+    <Content Include="assets\images\cover3.jpg" />
+    <Content Include="assets\images\cta.png" />
+    <Content Include="assets\images\down.png" />
+    <Content Include="assets\images\download-removebg-preview %281%29.jpg" />
+    <Content Include="assets\images\download-removebg-preview.jpg" />
+    <Content Include="assets\images\education-erp.png" />
+    <Content Include="assets\images\face-recognition-attendance-system.jpg" />
+    <Content Include="assets\images\fav-icon\icon.png" />
+    <Content Include="assets\images\feature1.jpg" />
+    <Content Include="assets\images\fee-collection.png" />
+    <Content Include="assets\images\file.jpg" />
+    <Content Include="assets\images\footer1.jpg" />
+    <Content Include="assets\images\footer2.jpg" />
+    <Content Include="assets\images\ggu_logo.png" />
+    <Content Include="assets\images\hind_logo1.png" />
+    <Content Include="assets\images\Hospital-.png" />
+    <Content Include="assets\images\Hostel-Management.jpg" />
+    <Content Include="assets\images\hs1.JPEG" />
+    <Content Include="assets\images\html.png" />
+    <Content Include="assets\images\kushsakariya.png" />
+    <Content Include="assets\images\kdpandya.png" />
+    <Content Include="assets\images\img.png" />
+    <Content Include="assets\images\landing.jpg" />
+    <Content Include="assets\images\logo.png" />
+    <Content Include="assets\images\logo2.png" />
+    <Content Include="assets\images\logo_FefsaHospital1.png" />
+    <Content Include="assets\images\logo_Nmediasoft %283%29-Photoroom.jpg" />
+    <Content Include="assets\images\logo_Nmediasoft_optimized-removebg-preview %281%29.png" />
+    <Content Include="assets\images\logo_Nmediasoft_optimized-removebg-preview %282%29.png" />
+    <Content Include="assets\images\logo_Nmediasoft_optimized-removebg-preview %283%29.png" />
+    <Content Include="assets\images\logo_Nmediasoft_optimized-removebg-preview %284%29.png" />
+    <Content Include="assets\images\logo_Nmediasoft_optimized-removebg-preview.png" />
+    <Content Include="assets\images\logo_Nmediasoft_optimized.png" />
+    <Content Include="assets\images\mangaldev_logo1.jpg" />
+    <Content Include="assets\images\nirav %282%29.jpg" />
+    <Content Include="assets\images\noble_logo1.png" />
+    <Content Include="assets\images\nodejs.png" />
+    <Content Include="assets\images\online_testing.jpg" />
+    <Content Include="assets\images\our.png" />
+    <Content Include="assets\images\photo.png" />
+    <Content Include="assets\images\pic.png" />
+    <Content Include="assets\images\price.png" />
+    <Content Include="assets\images\pricing.png" />
+    <Content Include="assets\images\proces.png" />
+    <Content Include="assets\images\process1.png" />
+    <Content Include="assets\images\process2.png" />
+    <Content Include="assets\images\process3.png" />
+    <Content Include="assets\images\process4.png" />
+    <Content Include="assets\images\prt1.jpg" />
+    <Content Include="assets\images\prt2.jpg" />
+    <Content Include="assets\images\prt3.jpg" />
+    <Content Include="assets\images\prt4.jpg" />
+    <Content Include="assets\images\prt5.jpg" />
+    <Content Include="assets\images\prt6.jpg" />
+    <Content Include="assets\images\prt7.jpg" />
+    <Content Include="assets\images\reactjs.png" />
+    <Content Include="assets\images\resize.png" />
+    <Content Include="assets\images\RRU-Logo12.png" />
+    <Content Include="assets\images\sahil.jpg" />
+    <Content Include="assets\images\sen.jpeg" />
+    <Content Include="assets\images\service-6.jpg" />
+    <Content Include="assets\images\service-7.jpg" />
+    <Content Include="assets\images\service-8.jpg" />
+    <Content Include="assets\images\service4.png" />
+    <Content Include="assets\images\service5.png" />
+    <Content Include="assets\images\service6.png" />
+    <Content Include="assets\images\service7.png" />
+    <Content Include="assets\images\service8.png" />
+    <Content Include="assets\images\service9.png" />
+    <Content Include="assets\images\slide2.jpg" />
+    <Content Include="assets\images\slider1.jpg" />
+    <Content Include="assets\images\slider10.jpg" />
+    <Content Include="assets\images\slider11.jpg" />
+    <Content Include="assets\images\slider12.jpg" />
+    <Content Include="assets\images\slider13.jpg" />
+    <Content Include="assets\images\slider14.jpg" />
+    <Content Include="assets\images\slider15.jpg" />
+    <Content Include="assets\images\slider16.jpg" />
+    <Content Include="assets\images\slider3.jpg" />
+    <Content Include="assets\images\slider4.jpg" />
+    <Content Include="assets\images\slider5.jpg" />
+    <Content Include="assets\images\slider6.jpg" />
+    <Content Include="assets\images\slider7.jpg" />
+    <Content Include="assets\images\slider8.jpg" />
+    <Content Include="assets\images\slider9.jpg" />
+    <Content Include="assets\images\sms.jpg" />
+    <Content Include="assets\images\sqlserver.jpg" />
+    <Content Include="assets\images\srk1.JPEG" />
+    <Content Include="assets\images\team-2.png" />
+    <Content Include="assets\images\team.jpg" />
+    <Content Include="assets\images\team1.jpg" />
+    <Content Include="assets\images\team2.jpg" />
+    <Content Include="assets\images\team3.jpg" />
+    <Content Include="assets\images\team3.png" />
+    <Content Include="assets\images\team4.jpg" />
+    <Content Include="assets\images\team4.png" />
+    <Content Include="assets\images\team5.jpg" />
+    <Content Include="assets\images\team5.png" />
+    <Content Include="assets\images\team6.jpg" />
+    <Content Include="assets\images\team7.jpg" />
+    <Content Include="assets\images\team8.jpg" />
+    <Content Include="assets\images\tech.jpg" />
+    <Content Include="assets\images\techno.jpg" />
+    <Content Include="assets\images\techno2.png" />
+    <Content Include="assets\images\Technologies.jpg" />
+    <Content Include="assets\images\testi1.png" />
+    <Content Include="assets\images\testi2.png" />
+    <Content Include="assets\images\testi3.jpg" />
+    <Content Include="assets\images\testi4.png" />
+    <Content Include="assets\images\ts.png" />
+    <Content Include="assets\images\Untitled.png" />
+    <Content Include="assets\images\vallabh-logo.png" />
+    <Content Include="assets\images\video.png" />
+    <Content Include="assets\images\video1.jpg" />
+    <Content Include="assets\images\vuejs.png" />
+    <Content Include="assets\images\WhatApp-Chatbot.png" />
+    <Content Include="assets\images\WhatsApp_icon.png" />
+    <Content Include="assets\images\why.jpg" />
+    <Content Include="assets\images\why1.jpg" />
+    <Content Include="assets\images\widget1.jpg" />
+    <Content Include="assets\images\widget2.jpg" />
+    <Content Include="assets\images\widget3.jpg" />
+    <Content Include="assets\images\WordPress.png" />
+    <Content Include="assets\js\ajax-mail.js" />
+    <Content Include="assets\js\animated-text.js" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\imagesloaded.pkgd.min.js" />
+    <Content Include="assets\js\isotope.pkgd.min.js" />
+    <Content Include="assets\js\jquery.counterup.min.js" />
+    <Content Include="assets\js\jquery.meanmenu.js" />
+    <Content Include="assets\js\jquery.nav.js" />
+    <Content Include="assets\js\jquery.nivo.slider.pack.js" />
+    <Content Include="assets\js\jquery.scrollUp.js" />
+    <Content Include="assets\js\owl.carousel.min.js" />
+    <Content Include="assets\js\scrollcue.js" />
+    <Content Include="assets\js\scrollCue.min.js" />
+    <Content Include="assets\js\theme.js" />
+    <Content Include="assets\js\vendor\jquery-3.2.1.min.js" />
+    <Content Include="assets\js\vendor\modernizr-3.5.0.min.js" />
+    <Content Include="assets\js\waypoints.min.js" />
+    <Content Include="assets\js\wow.js" />
+    <Content Include="assets\webfonts\fa-brands-400.svg" />
+    <Content Include="assets\webfonts\fa-regular-400.svg" />
+    <Content Include="assets\webfonts\fa-solid-900.svg" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Style.css" />
+    <Content Include="venobox\close.gif" />
+    <Content Include="venobox\next.gif" />
+    <Content Include="venobox\preload-circle.png" />
+    <Content Include="venobox\preload-dots.png" />
+    <Content Include="venobox\preload-ios.png" />
+    <Content Include="venobox\preload-quads.png" />
+    <Content Include="venobox\preload.png" />
+    <Content Include="venobox\prev.gif" />
+    <Content Include="venobox\venobox.css" />
+    <Content Include="venobox\venobox.js" />
+    <Content Include="venobox\venobox.min.js" />
+    <Content Include="Views\services\Services.cshtml" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\contact.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\httppostAttribute.cs" />
+    <Compile Include="Controllers\IndexController.cs" />
+    <Compile Include="Controllers\Page2Controller.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ServicesController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\contact.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="assets\fonts\fa-brands-400.eot" />
+    <Content Include="assets\fonts\fa-brands-400.ttf" />
+    <Content Include="assets\fonts\fa-brands-400.woff" />
+    <Content Include="assets\fonts\fa-brands-400.woff2" />
+    <Content Include="assets\fonts\fa-brands-400d41d.eot" />
+    <Content Include="assets\fonts\fa-regular-400.eot" />
+    <Content Include="assets\fonts\fa-regular-400.ttf" />
+    <Content Include="assets\fonts\fa-regular-400.woff" />
+    <Content Include="assets\fonts\fa-regular-400.woff2" />
+    <Content Include="assets\fonts\fa-regular-400d41d.eot" />
+    <Content Include="assets\fonts\fa-solid-900.eot" />
+    <Content Include="assets\fonts\fa-solid-900.ttf" />
+    <Content Include="assets\fonts\fa-solid-900.woff" />
+    <Content Include="assets\fonts\fa-solid-900.woff2" />
+    <Content Include="assets\fonts\fa-solid-900d41d.eot" />
+    <Content Include="assets\fonts\Flaticon.eot" />
+    <Content Include="assets\fonts\Flaticon.ttf" />
+    <Content Include="assets\fonts\Flaticon.woff" />
+    <Content Include="assets\fonts\Flaticon.woff2" />
+    <Content Include="assets\fonts\Flaticond41ds.eot" />
+    <Content Include="assets\fonts\fontawesome-webfont3e6e.eot" />
+    <Content Include="assets\fonts\fontawesome-webfont3e6e.ttf" />
+    <Content Include="assets\fonts\fontawesome-webfont3e6e.woff" />
+    <Content Include="assets\fonts\fontawesome-webfont3e6e.woff2" />
+    <Content Include="assets\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="assets\fonts\line-awesome0176.eot" />
+    <Content Include="assets\fonts\line-awesomeeb4f.eot" />
+    <Content Include="assets\fonts\line-awesomeeb4f.ttf" />
+    <Content Include="assets\fonts\line-awesomeeb4f.woff" />
+    <Content Include="assets\fonts\line-awesomeeb4f.woff2" />
+    <Content Include="assets\fonts\themify9f24.eot" />
+    <Content Include="assets\fonts\themify9f24.ttf" />
+    <Content Include="assets\fonts\themify9f24.woff" />
+    <Content Include="assets\fonts\themifyd41d.eot" />
+    <Content Include="assets\webfonts\fa-brands-400.eot" />
+    <Content Include="assets\webfonts\fa-brands-400.ttf" />
+    <Content Include="assets\webfonts\fa-brands-400.woff" />
+    <Content Include="assets\webfonts\fa-brands-400.woff2" />
+    <Content Include="assets\webfonts\fa-regular-400.eot" />
+    <Content Include="assets\webfonts\fa-regular-400.ttf" />
+    <Content Include="assets\webfonts\fa-regular-400.woff" />
+    <Content Include="assets\webfonts\fa-regular-400.woff2" />
+    <Content Include="assets\webfonts\fa-solid-900.eot" />
+    <Content Include="assets\webfonts\fa-solid-900.ttf" />
+    <Content Include="assets\webfonts\fa-solid-900.woff" />
+    <Content Include="assets\webfonts\fa-solid-900.woff2" />
+    <Content Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </Content>
+    <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Index\Index.cshtml" />
+    <Content Include="Views\blog\Blog.cshtml" />
+    <Content Include="Views\contact\Contact.cshtml" />
+    <Content Include="Views\product\Product.cshtml" />
+    <Content Include="Views\about\About.cshtml" />
+    <Content Include="Views\blog\Ai-Education-System.cshtml" />
+    <Content Include="Views\blog\whatsapp.cshtml" />
+    <Content Include="Views\blog\school.cshtml" />
+    <Content Include="Views\blog\details.cshtml" />
+    <Content Include="Views\blog\attandance.cshtml" />
+    <Content Include="Views\blog\hostel.cshtml" />
+    <Content Include="Views\blog\erp.cshtml" />
+    <Content Include="Views\blog\page.cshtml" />
+    <Content Include="Views\blog\face.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53081</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44390/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
